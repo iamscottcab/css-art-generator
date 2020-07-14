@@ -28,6 +28,7 @@ else
     <div style="
     width: 1px;
     height: 1px;
+    background-color: @(String.Format("rgba({0}, {1}, {2}, {3});", pixels[0, 0].R, pixels[0, 0].G, pixels[0, 0].B, pixels[0, 0].A / 255))
     box-shadow:
         @for (var x = 0; x < imageWidth; x++)
         {
@@ -36,10 +37,8 @@ else
                 //Do nothing we can just set the background colour for that pixel
                 @if (x == 0 && y == 0) continue;
 
-                @(x.ToString() + "px " + y.ToString() + "px" + String.Format(" rgba({0}, {1}, {2}, {3}) ", pixels[x, y].R, pixels[x, y].G, pixels[x, y].B, pixels[x, y].A / 255) + (x < imageWidth - 1 || y < imageHeight - 1 ? "," : ";"));
+                @(x.ToString() + "px " + y.ToString() + "px" + String.Format(" rgba({0}, {1}, {2}, {3})", pixels[x, y].R, pixels[x, y].G, pixels[x, y].B, pixels[x, y].A / 255) + (x < imageWidth - 1 || y < imageHeight - 1 ? ", " : ";"));
             }
-        }
-    background-color: @(String.Format("rgba({0}, {1}, {2}, {3});", pixels[0, 0].R, pixels[0, 0].G, pixels[0, 0].B, pixels[0, 0].A / 255));
-            ">
+        }">
     </div>
 }
