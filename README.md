@@ -53,8 +53,8 @@ Below is the example output when generating the winking face emoji that you can 
     }
     
     body {
-        min-width: 120px;;
-        min-height: 120px;;
+        min-width: 120px;
+        min-height: 120px;
     }
     </style>
 
